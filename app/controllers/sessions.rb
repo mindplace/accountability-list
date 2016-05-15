@@ -1,10 +1,6 @@
 # redirects from index to list page
 get '/' do
-  if logged_in?
-    redirect "/list"
-  else
-    erb :'index'
-  end
+  erb :'index'
 end
 
 # sends new login page

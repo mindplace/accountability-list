@@ -31,4 +31,3 @@ Example specific standards:
 - "I stayed kind to myself."
 - "I spent 15 minutes meditating."
 - "My day’s work fit into the long-term goals I have for myself."
-g

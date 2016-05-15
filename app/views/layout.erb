@@ -15,10 +15,10 @@
     <li class="navlink left"><a href="/">Home</a></li>
     <li class="navlink left" id="date"><script>document.write(moment().format('MMMM Do'));</script></li>
     <% if logged_in? %>
-      <li class="navlink right"><a href="/list">today's list</a></li>
-      <li class="navlink right"><a href="/data">data</a></li>
-      <li class="navlink right"><a href="/users/<%= current_user.id %>">profile</a></li>
       <li class="navlink right"><a href="/logout">logout</a></li>
+      <li class="navlink right"><a href="/users/<%= current_user.id %>">profile</a></li>
+      <li class="navlink right"><a href="/data">data</a></li>
+      <li class="navlink right"><a href="/list">today's list</a></li>
     <% else %>
       <li class="navlink right"><a href="/users/new">sign up</a></li>
       <li class="navlink right"><a href="/login">login</a></li>

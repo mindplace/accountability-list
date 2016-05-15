@@ -1,0 +1,5 @@
+<form id="user-password-form" action="/items/<%= @item .id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input id="form-username" type="text" name="item[list_item]" value="<%= @item.try(:list_item) %>">
+    <input id="form-submit" type="submit" value="edit">
+</form>

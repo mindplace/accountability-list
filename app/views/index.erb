@@ -1,5 +1,12 @@
 <h1>Accountability Checklist</h1>
 
-<div id="index-button">
-  <a href="/login">Log in</a>
-</div>
+<% if logged_in? %>
+  <div id="index-button">
+    <a href="/list">go to your list</a>
+  </div>
+
+<% else %>
+  <div id="index-button">
+    <a href="/login">log in</a>
+  </div>
+<% end %>

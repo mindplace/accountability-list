@@ -7,7 +7,7 @@ end
 post '/items' do
   @item = Item.new(params[:item])
   if @item.save
-    redirect "/user/#{current_user.id}"
+    redirect "/users/#{current_user.id}"
   else
     @errors = @item.errors.full_messages
     erb :'items/new'
@@ -24,7 +24,7 @@ end
 put '/items/:id' do
   @item = Item.find_by(id: params[:id])
   if @item.update(params[:item])
-    redirect "/user/#{current_user.id}"
+    redirect "/users/#{current_user.id}"
   else
     @errors = @item.errors.full_messages
     erb :'items/edit'
@@ -35,5 +35,5 @@ end
 delete '/items/:id' do
   item = Item.find_by(id: params[:id])
   item.destroy
-  redirect "/user/#{current_user.id}"
+  redirect "/users/#{current_user.id}"
 end
