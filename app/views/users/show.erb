@@ -1,10 +1,22 @@
-<h1><%= current_user.username %></h1>
+<h1><%= current_user.name %>'s list</h1>
 
 <ul class="profile-list">
   <% current_user.items.each do |item| %>
     <li>
-      <p>item.list_item</p>
-      <p>
+      <div class="profile-list-item"><%= item.list_item %></div>
+
+      <div class="profile-list-item-data">
+        <span><%= "#{item.success_rate}%" %></span>
+        <span><form id="edit" action="/items/<%= item .id %>" method="post">
+                <input type="hidden" name="_method" value="put">
+                <input type="text" name="item[list_item]" value="<%= item.try(:list_item) %>">
+                <input type="submit" value="edit">
+                </form></span>
+        <span><form id="delete" action="/items/<%= item.id %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" value="delete">
+                </form></span>
+      </div>
     </li>
   <%end%>
 </ul>

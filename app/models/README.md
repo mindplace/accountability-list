@@ -14,7 +14,6 @@
 ### Item
 - has text containing its value
 - belongs to a user
-- belongs to a list
 
 ### Checkoff
 A datapoint for keeping track of a checked-off item

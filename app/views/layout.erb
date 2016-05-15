@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/application.css">
 
@@ -17,16 +12,16 @@
 </head>
 <body>
   <ul class="navbar">
-    <li class="navlink right"><a href="/">Home</a></li>
-    <li class="navlink right" id="date"><script>document.write(moment().format('MMMM Do'));</script></li>
+    <li class="navlink left"><a href="/">Home</a></li>
+    <li class="navlink left" id="date"><script>document.write(moment().format('MMMM Do'));</script></li>
     <% if logged_in? %>
-      <li class="navlink left"><a href="/list">Today's list</a></li>
-      <li class="navlink left"><a href="/data">Data</a></li>
-      <li class="navlink left"><a href="/user/<%= current_user.id %>">Profile</a></li>
-      <li class="navlink left"><a href="/logout">Logout</a></li>
+      <li class="navlink right"><a href="/list">today's list</a></li>
+      <li class="navlink right"><a href="/data">data</a></li>
+      <li class="navlink right"><a href="/users/<%= current_user.id %>">profile</a></li>
+      <li class="navlink right"><a href="/logout">logout</a></li>
     <% else %>
-      <li class="navlink"><a href="/users/new">Sign up</a></li>
-      <li class="navlink"><a href="/login">Login</a></li>
+      <li class="navlink right"><a href="/users/new">sign up</a></li>
+      <li class="navlink right"><a href="/login">login</a></li>
     <% end %>
   </ul>
 

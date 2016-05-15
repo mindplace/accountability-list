@@ -1,16 +1,15 @@
 <h1>sign up</h1>
 
-<% if @errors %>
-  <ul>
-    <% @errors.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <form id="user-password-form" action="/users" method="post">
-  <input type="text" name="user[name]" placeholder="name"><br>
-  <input type="text" name="user[username]" placeholder="username"><br>
-  <input type="password" name="user[password]" placeholder="password"><br>
-  <input type="submit" value="create account">
+  <% if @errors %>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <input id="form-name" type="text" name="user[name]" placeholder="name"><br>
+  <input id="form-username" type="text" name="user[username]" placeholder="username"><br>
+  <input id="form-password" type="password" name="user[password]" placeholder="password"><br>
+  <input id="form-submit" type="submit" value="create account">
 </form>
