@@ -1,0 +1,7 @@
+<h1>add new item</h1>
+
+<form class="new-item" action="/items" method="post">
+  <input type="hidden" name="item[user_id]" value="<%= current_user.id %>">
+  <input type="text" name="item[list_item]" placeholder="Today, I...">
+  <input type="submit" value="Add to your list">
+</form>
