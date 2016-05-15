@@ -1,6 +1,6 @@
 ## Models
 
-![schema]("/app/models/accountability_schema.png")
+![schema](/app/models/accountability_schema.png)
 
 ### User
 - has username: must be unique
