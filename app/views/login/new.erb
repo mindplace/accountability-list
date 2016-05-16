@@ -2,7 +2,7 @@
 
 <form id="user-password-form" action="/login" method="post">
   <% if @errors %>
-    <ul>
+    <ul class="errors-list">
       <% @errors.each do |error| %>
         <li><%= error %></li>
       <% end %>

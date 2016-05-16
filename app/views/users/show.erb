@@ -1,11 +1,13 @@
 <h1><%= current_user.name %>'s list</h1>
 
-<p><a href="/items/new">add new item to your list</a></p>
+<div id="index-button">
+  <a href="/items/new">add new item</a>
+</div>
 
 <ul class="profile-list">
   <% current_user.items.each do |item| %>
       <li class="profile-list-item">
-        <p><%= item.list_item %></p>
+        <p><b><%= item.list_item %></b></p>
 
         <span class="profile-list-item-data" id="success-rate"><%= "#{item.success_rate}%" %> success rate</span>
           <span class="profile-list-item-data"><a id="edit" href="/items/<%= item.id %>/edit">edit</a></span>

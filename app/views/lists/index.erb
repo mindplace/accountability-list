@@ -1,0 +1,20 @@
+<form id="list-form" action="/list" method="post">
+
+  <% current_user.items.each do |item| %>
+    <% if item.checked? %>
+      <input class="checkbox" id="<%= item.id %>" type="checkbox" name="item[<%= item.id %>]">
+        <label for="<%= item.id %>" class="item checked"><%= item.list_item %></label><br/>
+
+    <% else %>
+      <input class="checkbox" id="<%= item.id %>" type="checkbox" name="item[<%= item.id %>]">
+        <label for="<%= item.id %>" class="item unchecked"><%= item.list_item %></label><br/>
+    <% end %>
+
+  <% end %>
+
+  <% if !current_user.items.all?{|i| i.checked?} %>
+    <input id="form-submit" type="submit" value="submit review">
+  <% else %>
+    <p class="message">you've completed your list today. good job :)</p>
+  <% end %>
+</form>

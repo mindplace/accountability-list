@@ -24,6 +24,10 @@ require 'bcrypt'
 
 require 'date'
 
+
+# Trying to set timezone to EST
+ActiveRecord::Base.default_timezone = :local
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 

@@ -1,8 +1,9 @@
 <h1>sign up</h1>
 
 <form id="user-password-form" action="/users" method="post">
+
   <% if @errors %>
-    <ul>
+    <ul class="errors-list">
       <% @errors.each do |error| %>
         <li><%= error %></li>
       <% end %>

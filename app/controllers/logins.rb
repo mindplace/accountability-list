@@ -10,11 +10,15 @@ end
 
 # uses form data to sign user in
 post '/login' do
-  user = User.find_by(username: params[:username]) #create new login
+  user = User.find_by(username: params[:username])
 
   if user && user.authenticate(params[:password])
     session[:id] = user.id
-    redirect '/list' #redirect back to login index page
+    if user.items.empty?
+      redirect "/users/#{user.id}"
+    else
+      redirect '/list'
+    end
   elsif user
     @errors = ["Incorrect password"]
     erb :'login/new'
