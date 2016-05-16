@@ -186,59 +186,55 @@ h1 {
   color: #d3d3d3;
 }
 
-input[type=checkbox].checkbox.checked {
-	position:absolute;
-  z-index:-1000;
-  left:-1000px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height:1px; width:1px;
-  margin:-1px;
-  padding:0;
-  border:0;
-  opacity: 0;
-}
-
 input[type=checkbox].checkbox {
 	position:absolute;
-  z-index:-1000;
-  left:-1000px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height:1px; width:1px;
-  margin:-1px;
-  padding:0;
-  border:0;
+	z-index:-1000;
+	left:-1000px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height:1px;
+	width:1px;
+	margin:-1px;
+	padding:0;
+	border:0;
 }
 
 input[type=checkbox].checkbox + label.item {
-  padding-left:29px;
-  height:24px;
-  display:inline-block;
-  line-height:24px;
-  background-repeat:no-repeat;
-  background-position: 0 0;
-  font-size:24px;
-  vertical-align:middle;
-  cursor:pointer;
+	padding-left:48px;
+	height:41px;
+	display:inline-block;
+	line-height:41px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:20px;
+	vertical-align:middle;
+	cursor:pointer;
 }
 
 input[type=checkbox].checkbox:checked + label.item {
-	background-position: 0 -24px;
+	background-position: 0 -41px;
 }
 
 label.item {
-  background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_82405711c484478c3bbca93e304dc9c3.png);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+	background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_6e190c11a323c19be0be784efeb3229a.png);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
+
 
 #list-form {
   width: 60%;
   margin: auto;
   padding: 5%;
+}
+
+.message {
+  text-align: center;
+  color: #19ABB5;
+  margin-top: 10%;
+  font-size: large;
 }

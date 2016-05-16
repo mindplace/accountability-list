@@ -2,7 +2,7 @@
 
   <% current_user.items.each do |item| %>
     <% if item.checked? %>
-      <input class="checkbox" id="<%= item.id %>" type="checkbox" name="item[<%= item.id %>]">
+      <input class="checkbox" id="<%= item.id %>" type="checkbox" name="item[<%= item.id %>]" checked>
         <label for="<%= item.id %>" class="item checked"><%= item.list_item %></label><br/>
 
     <% else %>
