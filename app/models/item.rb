@@ -3,10 +3,10 @@ class Item < ActiveRecord::Base
   validates :list_item, presence: true
 
   def success_rate
-    all = Session.where(user_id: user.id).where("created_at > ?", created_at)
+    all = user.sessions.select{|s| s.created_at.beginning_of_day >= created_at.beginning_of_day}
     checked = all.select{|s| s.checkoffs.map{|c| c.item}.include?(self)}.length
+    
     all = all.length == 0 ? 1 : all.length
-
     ((checked.fdiv(all)) * 100).round
   end
 
