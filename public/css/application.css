@@ -82,6 +82,49 @@ h1 {
   color: #19ABB5;
 }
 
+.tab-content {
+    display: none;
+}
+
+.tabs {
+    float: left;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 16px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.tabs li {
+    margin-right: 16px;
+    padding: 20px 15px;
+    height: 60px;
+    width: 30%;
+    text-align: center;
+}
+
+.tabs li a {
+    color: #666;
+    text-decoration: none;
+}
+
+.tabs li.active {
+    border: 1px solid #ccc;
+    border-bottom: 1px solid white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-bottom: -1px;
+    height: 61px;
+    padding: 19px 14px;
+}
+
+.tabs li.active a {
+    color: black;
+    text-decoration: none;
+    border-bottom: none;
+}
+
 .footer {
   position: absolute;
   right: 0;
@@ -98,7 +141,7 @@ h1 {
   color: white;
 }
 
-#index-button a {
+.index-button a {
   text-decoration: none;
   text-align: center;
   display: block;
@@ -111,7 +154,7 @@ h1 {
   background-color: #d3d3d3;
 }
 
-#index-button a:hover, #form-submit a:hover {
+.index-button a:hover, #form-submit a:hover {
   border-color: #19ABB5;
   background-color: #19ABB5;
 }

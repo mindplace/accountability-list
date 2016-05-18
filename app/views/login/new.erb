@@ -2,11 +2,7 @@
 
 <form id="user-password-form" action="/login" method="post">
   <% if @errors %>
-    <ul class="errors-list">
-      <% @errors.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
+    <%= erb :'_errors', layout: false, locals: { errors: @errors } %>
   <% end %>
   <input  id="form-username" type="text" name="username" placeholder="username"><br>
   <input id="form-password" type="password" name="password" placeholder="password"><br>

@@ -1,16 +1,29 @@
 # View to new item to the list
 get '/items/new' do
-  erb :'items/new'
+  if request.xhr?
+    erb :"items/_new", layout: false
+  else
+    erb :'items/new'
+  end
 end
 
 # process adding new item to the list
 post '/items' do
   @item = Item.new(params[:item])
   if @item.save
-    redirect "/users/#{current_user.id}"
+    if request.xhr?
+      erb :'items/_show', layout: false, locals: { item: @item }
+    else
+      redirect "/users/#{current_user.id}"
+    end
   else
     @errors = @item.errors.full_messages
-    erb :'items/new'
+    if request.xhr?
+      status 400
+      erb :'_errors', layout: false, locals: { errors: @errors }
+    else
+      erb :'items/new'
+    end
   end
 end
 
